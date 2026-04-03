@@ -1,5 +1,7 @@
 # Obstacle Course — Mission 2: Scheduled Drift Detection + Makefile
 
+> **Note**: Copy the `roles/` directory and `.ansible-lint` from `mission-1/` into this directory before starting. Your Makefile targets should work against that role.
+
 Write a scheduled GitHub Actions workflow for drift detection and a Makefile with pipeline stage targets.
 
 ## Your Task

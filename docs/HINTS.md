@@ -1,5 +1,7 @@
 # Mission 2.4: The Automated Defence Line — Hints
 
+> Back to: [Briefing](BRIEFING.md) | [Checklist](../CHECKLIST.md)
+
 ## Troubleshooting
 
 **SSH issues**: Run `make setup` first. Containers are for local testing, not for the CI workflow itself.
