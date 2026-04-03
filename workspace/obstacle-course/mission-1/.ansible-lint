@@ -1,0 +1,6 @@
+---
+skip_list:
+  - yaml[truthy]
+  - name[casing]
+warn_list:
+  - experimental

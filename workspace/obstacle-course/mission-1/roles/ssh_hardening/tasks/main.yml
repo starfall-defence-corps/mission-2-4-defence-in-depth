@@ -1,0 +1,21 @@
+---
+- name: Disable SSH root login
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?PermitRootLogin'
+    line: "PermitRootLogin no"
+  notify: restart sshd
+
+- name: Disable SSH password authentication
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?PasswordAuthentication'
+    line: "PasswordAuthentication no"
+  notify: restart sshd
+
+- name: Set SSH MaxAuthTries
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?MaxAuthTries'
+    line: "MaxAuthTries {{ ssh_max_auth_tries }}"
+  notify: restart sshd
