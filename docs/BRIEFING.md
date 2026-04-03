@@ -215,20 +215,20 @@ GitHub → Settings → Branches → Branch protection rules:
 
 | File | Location |
 |------|----------|
-| CI workflow | `obstacle-course/mission-1/.github/workflows/ci.yml` |
-| Makefile | `obstacle-course/mission-2/Makefile` |
-| Drift workflow | `obstacle-course/mission-2/.github/workflows/drift-detection.yml` |
+| CI workflow | `workspace/obstacle-course/mission-1/.github/workflows/ci.yml` |
+| Makefile | `workspace/obstacle-course/mission-2/Makefile` |
+| Drift workflow | `workspace/obstacle-course/mission-2/.github/workflows/drift-detection.yml` |
 
 ### Main Mission
 
 | File | Location |
 |------|----------|
-| CI workflow | `main-mission/.github/workflows/ci.yml` |
-| Drift workflow | `main-mission/.github/workflows/drift-detection.yml` |
-| Lint config | `main-mission/.ansible-lint` |
-| Makefile | `main-mission/Makefile` |
-| Pipeline docs | `main-mission/PIPELINE.md` |
-| Role | `main-mission/roles/fleet_hardening/` |
+| CI workflow | `workspace/main-mission/.github/workflows/ci.yml` |
+| Drift workflow | `workspace/main-mission/.github/workflows/drift-detection.yml` |
+| Lint config | `workspace/main-mission/.ansible-lint` |
+| Makefile | `workspace/main-mission/Makefile` |
+| Pipeline docs | `workspace/main-mission/PIPELINE.md` |
+| Role | `workspace/main-mission/roles/fleet_hardening/` |
 
 ---
 
@@ -242,5 +242,14 @@ ARIA verifies three phases:
 Run `make test` to verify.
 
 ---
+
+---
+
+## 6. GETTING STARTED
+
+1. Activate your environment: `source venv/bin/activate`
+2. All work goes in the `workspace/` directory — `cd workspace/`
+3. Stuck? Consult [HINTS.md](HINTS.md)
+4. Track your progress: [CHECKLIST.md](../CHECKLIST.md)
 
 *SDC Cyber Command — 2187 — LIEUTENANT EYES ONLY*
