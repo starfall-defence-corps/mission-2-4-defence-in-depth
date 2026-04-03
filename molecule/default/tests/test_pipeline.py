@@ -38,7 +38,7 @@ def _file_contains(path, pattern):
     try:
         with open(path) as f:
             content = f.read()
-        return bool(re.search(pattern, content))
+        return bool(re.search(pattern, content, re.MULTILINE))
     except FileNotFoundError:
         return False
 
@@ -236,11 +236,12 @@ class TestMainMission:
             "ARIA: PIPELINE.md not found."
         )
         content = _read_file(path)
-        # Check student filled it in
-        has_content = any(word in content.lower() for word in [
-            "pass", "require", "review", "check", "enforce", "protect",
-            "weekly", "daily", "cron", "drift",
-        ])
+        # Strip HTML comments and section headers to check for actual content
+        stripped = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+        stripped = re.sub(r'^#+\s+.*$', '', stripped, flags=re.MULTILINE)
+        stripped = re.sub(r'^\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|$', '', stripped, flags=re.MULTILINE)
+        stripped = stripped.strip()
+        has_content = len(stripped) > 50
         assert has_content, (
             "ARIA: PIPELINE.md appears to be the empty template. "
             "Document your pipeline stages, branch protection plan, and drift detection strategy."
