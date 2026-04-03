@@ -121,8 +121,39 @@ strategy:
 ```yaml
 on:
   schedule:
+    # ┌─── minute (0-59)
+    # │ ┌── hour (0-23)
+    # │ │ ┌─ day of month (1-31)
+    # │ │ │ ┌ month (1-12)
+    # │ │ │ │ ┌ day of week (0-6, Mon=1)
     - cron: '0 6 * * 1'    # Every Monday at 06:00 UTC
 ```
+
+### Failure Notification
+
+When a scheduled workflow detects drift, notify the team by creating a GitHub issue:
+
+```yaml
+    - name: Run verification
+      id: verify
+      run: molecule verify
+      continue-on-error: true
+
+    - name: Create drift issue
+      if: steps.verify.outcome == 'failure'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: 'Configuration Drift Detected',
+            body: 'Weekly scan found drift. Investigate.',
+            labels: ['drift']
+          });
+```
+
+`continue-on-error: true` lets the workflow continue after failure so the notification step can run. The `if:` conditional checks the outcome of the previous step.
 
 ### ansible-lint
 
@@ -133,6 +164,41 @@ ansible-lint roles/fleet_hardening/
 # With config file
 ansible-lint -c .ansible-lint roles/
 ```
+
+The `.ansible-lint` config file controls which rules to enforce:
+
+```yaml
+---
+skip_list:     # Rules to completely ignore
+  - yaml[truthy]
+  - name[casing]
+warn_list:     # Rules that warn but don't fail
+  - experimental
+```
+
+Run `ansible-lint -L` to see all available rules.
+
+### Writing a Makefile
+
+A Makefile defines named targets that run shell commands. You've used `make setup` and `make test` in every mission — now you write your own.
+
+```makefile
+.PHONY: lint test scan
+
+lint: ## Run ansible-lint
+	ansible-lint -c .ansible-lint roles/
+
+test: ## Run Molecule test
+	molecule test
+
+scan: ## Run security scan
+	pytest tests/ --sudo -v
+```
+
+**Key rules**:
+- Commands under a target must be indented with a **tab character**, not spaces. This is the most common Makefile error.
+- `.PHONY` declares targets that don't produce files — all pipeline targets should be listed here.
+- Add `## Description` after the target name — `make help` patterns can extract these.
 
 ### Branch Protection (Manual Setup)
 
