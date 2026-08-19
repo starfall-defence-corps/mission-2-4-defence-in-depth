@@ -1,5 +1,7 @@
 # Starfall Defence Corps Academy
 
+> 🧭 [← 2.3 Fleet Sync](https://github.com/starfall-defence-corps/mission-2-3-fleet-sync) · **You are here: 2.4 Defence in Depth** · [Master Simulation →](https://github.com/starfall-defence-corps/master-simulation) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
+
 ## Mission 2.4: The Automated Defence Line
 
 > *"Private YOLO-Deploy is back. Last time they pushed untested code. Now you build the system that makes it impossible. The automated defence line."*
