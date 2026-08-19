@@ -1,4 +1,4 @@
-.PHONY: help setup test reset destroy ssh-ubuntu ssh-rocky
+.PHONY: doctor help setup test reset destroy ssh-ubuntu ssh-rocky
 
 help: ## Show available commands
 	@echo ""
@@ -8,6 +8,9 @@ help: ## Show available commands
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-14s\033[0m %s\n", $$1, $$2}'
 	@echo ""
+
+doctor: ## Check your machine is mission-ready (Docker, ports, tools)
+	@bash $(ROOT_DIR)/scripts/doctor.sh
 
 setup: ## Launch pipeline test targets (2 containers)
 	@bash scripts/setup-lab.sh
