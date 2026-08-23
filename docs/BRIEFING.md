@@ -13,7 +13,7 @@ AUTHORITY: SDC Cyber Command, 2187
 
 ### 1a. Enemy Forces
 
-**Private YOLO-Deploy** is back. Last time, in Mission 2.1, YOLO-Deploy pushed untested code to production. Friday. 16:59. Three nodes down. You built tests to catch it.
+**Reaver YOLO-Deploy** is back. Last time, in Mission 2.1, YOLO-Deploy pushed untested code to production. Friday. 16:59. Three nodes down. You built tests to catch it.
 
 But YOLO-Deploy adapted. Now they bypass the tests. "I'll run them later." "The tests are slow." "It's just a small change." The tests exist but nothing **enforces** them.
 
