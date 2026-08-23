@@ -1,4 +1,5 @@
 .PHONY: doctor submit help setup test reset destroy ssh-ubuntu ssh-rocky
+ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 help: ## Show available commands
 	@echo ""
