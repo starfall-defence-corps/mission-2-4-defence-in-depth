@@ -6,7 +6,7 @@
 
 ## Mission 2.4: The Automated Defence Line
 
-> *"Private YOLO-Deploy is back. Last time they pushed untested code. Now you build the system that makes it impossible. The automated defence line."*
+> *"Reaver YOLO-Deploy is back. Last time they pushed untested code. Now you build the system that makes it impossible. The automated defence line."*
 
 You are a Lieutenant at the Starfall Defence Corps Academy. You've hardened systems, tested them, measured compliance, and orchestrated fleet-wide deployments. Now build the CI/CD pipeline that enforces all of it automatically.
 
