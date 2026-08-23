@@ -1,6 +1,6 @@
 # Starfall Defence Corps Academy
 
-> 🧭 [← 2.3 Fleet Sync](https://github.com/starfall-defence-corps/mission-2-3-fleet-sync) · **You are here: 2.4 Defence in Depth** · [Master Simulation →](https://github.com/starfall-defence-corps/master-simulation) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
+> 🧭 [← 2.3 Fleet Sync](https://github.com/starfall-defence-corps/mission-2-3-fleet-sync) · **You are here: 2.4 Defence in Depth** · [2.5 Noise Storm →](https://github.com/starfall-defence-corps/mission-2-5-noise-storm) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
 
 > ☁️ **No Docker on your machine?** Create your own copy first (Use this template), then on **your** repo: **Code → Codespaces → Create codespace** — everything is preinstalled. First boot takes ~5 min (one-time); after that it starts fast.
 
