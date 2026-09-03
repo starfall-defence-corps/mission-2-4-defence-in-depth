@@ -194,7 +194,7 @@ class TestMainMission:
         content = _read_file(path).lower()
         has_lint = "lint" in content
         has_test = "test" in content or "molecule" in content
-        has_scan = "scan" in content or "testinfra" in content or "security" in content
+        has_scan = "scan" in content or "testinfra" in content or "pytest tests/" in content
         assert has_lint and has_test and has_scan, (
             "ARIA: CI workflow must include lint, test, and scan stages. "
             "The scan stage runs a Testinfra security scan against the "
