@@ -4,7 +4,7 @@
 
 ## Troubleshooting
 
-**SSH issues**: Run `make setup` first. Containers are for local testing, not for the CI workflow itself.
+**SSH issues**: Run `make setup` first. The two containers are SSH targets you can experiment against — this lab does not wire a local Molecule/Testinfra run, and they are not used by the CI workflow itself (CI runners provision their own nodes). The `test` and `scan` stages are authored and graded structurally here, not executed locally; only `lint` runs locally (see below).
 
 **ansible-lint not found**: Activate your venv first: `source venv/bin/activate`. ansible-lint is in requirements.txt.
 
