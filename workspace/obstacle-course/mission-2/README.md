@@ -12,7 +12,7 @@ Create a `Makefile` in this directory with these targets:
 
 - `lint` — Run ansible-lint on the role
 - `test` — Run Molecule test (converge + verify)
-- `scan` — Run a security scan (Lynis audit on targets)
+- `scan` — Run a security scan (Testinfra audit against the converged targets)
 
 Each target should run the appropriate command. These are the local equivalents of your CI pipeline stages.
 
