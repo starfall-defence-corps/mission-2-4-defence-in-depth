@@ -70,6 +70,8 @@ make ssh-ubuntu    SSH into pipeline-ubuntu (port 2271)
 make ssh-rocky     SSH into pipeline-rocky (port 2272)
 ```
 
+> **Note:** `make submit` uses the [GitHub CLI](https://cli.github.com/) — install `gh` and run `gh auth login` once before your first submission.
+
 ## ARIA Review (Pull Request Workflow)
 
 **Locally** — run `make test` for instant verification.
