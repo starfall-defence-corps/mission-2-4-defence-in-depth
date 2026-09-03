@@ -72,6 +72,28 @@ Build a complete pipeline for your fleet_hardening role:
 - Pipeline documentation: branch protection plan
 - Local Makefile: run stages locally
 
+### How the stages run in this lab
+
+This mission grades **what you author**, not a live end-to-end pipeline run.
+`make test` runs ARIA's structural verification of your workflows, Makefile,
+role, and docs — it does **not** execute your pipeline.
+
+- **Lint** is genuinely runnable locally. `source venv/bin/activate`, then
+  `ansible-lint -c .ansible-lint roles/` — `ansible-lint` ships in
+  `requirements.txt`. Run it as you work.
+- **Test** (Molecule) and **Scan** (Testinfra) are **authored and validated
+  structurally** here, not executed. In a real deployment these stages run on
+  SDC's CI runners (GitHub Actions), which provision disposable nodes to
+  converge and verify against. This lab does **not** ship a wired Molecule
+  scenario or a `tests/` suite — the two lab containers (`pipeline-ubuntu`,
+  `pipeline-rocky`) are SSH targets for experimentation, not an automated local
+  run. Author the stages correctly; the SDC runners are what execute them.
+
+Canonical stage definitions (use these consistently across your CI workflow,
+Makefile, and docs): **Lint** = `ansible-lint`, **Test** = Molecule
+converge + verify, **Scan** = a **Testinfra** security scan (`pytest tests/`)
+against the converged nodes.
+
 ---
 
 ## 3. KEY CONCEPTS
@@ -192,7 +214,7 @@ test: ## Run Molecule test
 	molecule test
 
 scan: ## Run security scan
-	pytest tests/ --sudo -v
+	pytest tests/ --sudo -v    # Testinfra security checks
 ```
 
 **Key rules**:
