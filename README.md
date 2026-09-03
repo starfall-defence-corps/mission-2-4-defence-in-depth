@@ -26,6 +26,7 @@ You are a Lieutenant at the Starfall Defence Corps Academy. You've hardened syst
 ```bash
 git clone https://github.com/YOUR-USERNAME/mission-2-4-defence-in-depth.git
 cd mission-2-4-defence-in-depth
+make doctor
 make setup
 source venv/bin/activate
 ```
@@ -59,13 +60,17 @@ Stuck? [Hints](docs/HINTS.md) | Track progress: [Checklist](CHECKLIST.md)
 
 ```
 make help          Show available commands
+make doctor        Check your machine is mission-ready (Docker, ports, tools)
 make setup         Launch pipeline test targets (2 containers)
 make test          Ask ARIA to verify your work
+make submit        Submit your work for ARIA review (branch, commit, push, PR)
 make reset         Destroy and rebuild all nodes
 make destroy       Tear down everything
 make ssh-ubuntu    SSH into pipeline-ubuntu (port 2271)
 make ssh-rocky     SSH into pipeline-rocky (port 2272)
 ```
+
+> **Note:** `make submit` uses the [GitHub CLI](https://cli.github.com/) — install `gh` and run `gh auth login` once before your first submission.
 
 ## ARIA Review (Pull Request Workflow)
 
