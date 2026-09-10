@@ -20,3 +20,5 @@
 - [ ] fleet_hardening role present
 - [ ] PIPELINE.md documented (branch protection, drift detection)
 - [ ] `make test` — all phases pass
+
+**Next stop**: [Mission 2.5 — Noise Storm](https://github.com/starfall-defence-corps/mission-2-5-noise-storm)
