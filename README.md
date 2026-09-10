@@ -12,7 +12,7 @@ You are a Lieutenant at the Starfall Defence Corps Academy. You've hardened syst
 
 ## Prerequisites
 
-- Completed Module 1 (Missions 1.1–1.5 + Gateway Simulation)
+- Completed Module 1 (Missions 1.1–1.6 + Gateway Simulation)
 - Completed Missions 2.1–2.3
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (with Docker Compose v2)
 - [GNU Make](https://www.gnu.org/software/make/)
