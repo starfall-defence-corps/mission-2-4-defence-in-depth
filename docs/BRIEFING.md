@@ -270,7 +270,7 @@ Run `make test` to verify.
 ## 6. GETTING STARTED
 
 1. Activate your environment: `source venv/bin/activate`
-2. All work goes in the `workspace/` directory — `cd workspace/`
+2. All work goes in the `workspace/` directory — but run every command (`make test`, `make submit`) from the **project root** (the folder with the `Makefile`); don't `cd workspace/`
 3. Stuck? Consult [HINTS.md](HINTS.md)
 4. Track your progress: [CHECKLIST.md](../CHECKLIST.md)
 
