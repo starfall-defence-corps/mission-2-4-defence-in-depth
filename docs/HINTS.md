@@ -1,4 +1,4 @@
-# Mission 2.4: The Automated Defence Line — Hints
+# Mission 2.4: Defence in Depth — Hints
 
 > 📚 Deeper reference: [FM-3 — Molecule & Testing Reference](https://github.com/starfall-defence-corps/sdc-academy/blob/main/field-manuals/FM-3-molecule-testing-reference.md)
 

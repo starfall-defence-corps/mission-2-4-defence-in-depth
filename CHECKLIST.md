@@ -1,4 +1,4 @@
-# Mission 2.4: The Automated Defence Line — Checklist
+# Mission 2.4: Defence in Depth — Checklist
 
 ## Obstacle Course Mission 1
 - [ ] CI workflow exists at `workspace/obstacle-course/mission-1/.github/workflows/ci.yml`

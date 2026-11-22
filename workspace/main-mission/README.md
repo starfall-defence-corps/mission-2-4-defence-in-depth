@@ -1,4 +1,4 @@
-# Main Mission: The Automated Defence Line
+# Main Mission: Defence in Depth
 
 Build a complete CI/CD pipeline for your fleet_hardening role.
 
